@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+          
+<html>
+    <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+      <style>
+
+      	::-moz-placeholder {
+  color: gray;
+}
+:-ms-input-placeholder {
+  color: gray;
+}
+::placeholder {
+  color: gray;
+}
+
+.image {
+  background-image: url(image@1x.png);
+}
+@media (-webkit-min-device-pixel-ratio: 2),
+       (min-resolution: 2dppx) {
+  .image {
+    background-image: url(image@2x.png);
+  }
+}
+
+.konteineris{
+                     display: grid;
+
+                    }
+
+                  .jumbotron
+                  { 
+                                             
+                          border: 1px;
+                             border-style: solid;
+                             border-width: 1px;
+                             height: 150px;
+                             width: 1600px;
+                             margin-top: 10px;
+                             margin-right: 264px;
+                             margin-bottom: 140px; 
+                             box-sizing: border-box;
+
+
+                             }
+
+                    .O{
+                          padding-top: 10px;
+                             padding-right: 20px;
+                             padding-bottom: 20px;
+                             padding-left: 40px;
+                    }
+
+                    .antras {    
+                             border-style: solid;
+                             border-width: 1px;
+                             height: 150px;
+                             width: 1295px;
+                             margin: -150px -1px;
+                             
+                             }
+
+                    
+                      .grupe {
+                        padding-top: 10px;
+                        padding-right: 10px;
+                        padding-bottom: 10px;
+                        padding-left: 170px;
+                        margin: 0px 10px;
+                        display: flex;
+
+                         }
+
+                      
+                     .trecias {    
+                             border-style: solid;
+                             border-width: 1px;
+                             height: 665px;
+                             width: 289px;
+                             margin: -152px 1312px;
+                             /*align-items: flex-start;*/
+                             box-sizing: border-box;
+                              }
+
+                      .colors{
+
+                        /*display: table;*/
+                        padding-top: 45px;
+                        padding-bottom: 10px;
+                        padding-left: 35px;
+                      }      
+
+                      .resizeImage{
+                        display: inline-block;
+                        padding-left: 55px;
+                      }
+
+                      .check{
+                        
+                        padding-left: 60px;
+                      }
+
+
+                     .ketvirtas {    
+                             
+                             border-style: solid;
+                             border-width: 1px;
+                             width: 800px;
+                             height: 495px;
+                             margin: -506px 2px;
+                             padding-top: 2px;
+                             }
+
+                     .b {
+                        padding-top: 10px;
+                        padding-bottom: 30px;
+                        padding-right: 8px;
+                        padding-left: 10px;
+                        
+                     }
+
+                     
+
+                     .penktas {    
+                             border-style: solid;
+                             border-width: 1px;
+                             height: 499px;
+                             width: 482px;
+                             margin: 7px 812px;
+
+
+                         }
+
+                     .tekstinis{
+                             padding-left: 5%;
+                             padding-top: 10%;
+                     }   
+
+                     .trintukas{
+                             padding-left: 5%;
+                             padding-top: 10%;
+                     }   
+
+                     .sestas {    
+                             border-style: solid;
+                             background-color: black;
+                             border-width: 1px;
+                             margin-top: -20px;
+                             height: 100px;
+                             width: 1600px;
+                             margin: 10px 1px;
+                             display: inline-block;
+                             box-sizing: border-box;
+                             }    
+          
+	  </style>
+
+		       </head>
+
+      <body>
+
+		       <script>
+                   
+                   var lastph
+
+                   function changeImage() {
+
+                            if (document.getElementById("imgClickAndChange").src == "https://www.freepnglogos.com/uploads/smile-png/smile-mother-badge-honor-jewish-mom-6.png") 
+                                  {
+                                document.getElementById("imgClickAndChange").src = "https://www.freepnglogos.com/uploads/smile-png/file-gnome-face-smile-big-svg-wikimedia-commons-33.png";
+                                   } else{
+                                document.getElementById("imgClickAndChange").src = "https://www.freepnglogos.com/uploads/smile-png/smile-mother-badge-honor-jewish-mom-6.png";
+                                   }
+                                  }
+
+    function changeColor() {
+        let color = document.querySelector('input[name="color"]').value;
+        let cc = document.querySelector('input[name="CC"]:checked');
+
+        if (cc) {
+            document.querySelector(cc.value).style.backgroundColor = color;
+        }
+    }
+
+     function increaseSize( ) { 
+    var myImgs = document.getElementById("gr");
+    var width = document.getElementById("input-width").value;
+    var height = document.getElementById("input-height").value;
+
+    myImgs.querySelectorAll('img').forEach(img => {
+        img.style.width = width + "px";
+        img.style.height = height + "px";
+        })
+    }
+
+ function show() {
+  var images = document.querySelectorAll("img");
+  var elem = document.getElementById("chb-label");
+
+  images.forEach(function(image) {
+    image.addEventListener("mouseenter", function(e) {
+      elem.innerHTML = e.target.alt;
+      console.log("epa", e.target.alt);
+    });
+  });
+}
+
+function rodytiViduryje(pav){
+	var paveikslas=document.getElementById("jap");
+		paveikslas.src=pav.src;
+							
+	var aprasymas=document.getElementById("apr");
+		aprasymas.value=pav.title;			
+		lastph=pav;
+				}
+function keistiAprasyma(){
+	var NA=document.getElementById("apr");
+		lastph.title=NA.value;
+		
+				}
+				
+function trintiPaveiskla(){
+		//var paveikslas=document.getElementById("paveiks");
+		//paveikslas.remove();
+		lastph.remove();
+					
+					
+				}
+
+</script>
+   
+        <header class="jumbotron"; style="background-color:darkblue";>
+
+	    <img src="https://www.freepnglogos.com/uploads/smile-png/smile-mother-badge-honor-jewish-mom-6.png" alt="sypsenele" style="width: 120px; height: 120px;" id="imgClickAndChange" onclick="changeImage()" class="O" >
+
+	    </header>
+
+			<br />
+			     
+	    <div class="antras" >
+   
+                 <div class="grupe" id="gr">
+
+			     	<img src="https://upload.wikimedia.org/wikipedia/commons/c/c8/Altja_j%C3%B5gi_Lahemaal.jpg" alt=MiskoUpe style="width:170px;height: 120px;margin: 0px 40px;">
+ 
+			     	<img src="https://media.istockphoto.com/photos/mountain-landscape-picture-id517188688?k=20&m=517188688&s=612x612&w=0&h=i38qBm2P-6V4vZVEaMy_TaTEaoCMkYhvLCysE7yJQ5Q=" alt=Kalnai style="width:180px;height: 122px; margin: 0px 40px;">
+
+			     	<img src="https://natureconservancy-h.assetsadobe.com/is/image/content/dam/tnc/nature/en/photos/Zugpsitze_mountain.jpg?crop=0,176,3008,1654&wid=4000&hei=2200&scl=0.752" alt=KalnaiIrEzeras style="width:190px;height: 120px; margin: 0px 40px;">
+
+			     	<img src="https://images.assettype.com/fortuneindia%2F2020-06%2Fef53f9be-f257-4aa3-9af5-6ca1a9f33a86%2Fclose_up_photography_of_leaves_with_droplets_807598.jpg?rect=0,607,4128,2322&w=1250&q=60" alt=Lapai style="width:170px;height: 120px; margin: 0px 40px;">
+
+			      </div>
+			     
+	    </div>
+
+	<div class="trecias">
+			     	
+			     <div class="colors" id="co">
+                    <label for="spp">Pasirinkite spalvą:</label>
+                    <input name="color" type="color" value="#000000"/><br>
+                    <input name="CC" type="radio" value="header"/>Header<br>
+                    <input name="CC" type="radio" value="footer"/>Footer<br>
+                    <button onclick="changeColor();">Pakeisti</button>
+             </div>
+
+			     <hr style="width:85%;">
+
+			     <br>
+
+			     <div class="resizeImage">
+			     
+			      <h><b>Paveikslu galerijoje parametrai</b></h>
+                    <br>
+                    <br>
+                    <label for="Plotis"> Plotis: </label>
+                    <input type="text" value="0" id="input-width" name="plotis"/> 
+                    <br>
+                    <br>
+                    <label for="Aukstis"> Aukstis: </label>
+                    <input type="text" value="0" id="input-height" name="aukstis" /> 
+                    <br>
+                    <br>
+                    <button type="button" value="Pritaikyti" onclick="increaseSize()">Pritaikyti</button><br>
+
+			     </div>
+			     <br>
+			     <br>
+
+			     <hr style="width:85%;">
+
+			     <br>
+			     <br>
+
+			     <div class="check">
+                  <label for="checkb"> <b>Rodyti aprasyma:</b> </label>
+                  <input type="checkbox" id="chb" onclick="show()" />
+                  <span id="chb-label"></span>
+                 </div>
+
+			     	
+			     	</div>
+			     
+	<div class="ketvirtas">
+			     	
+			     	<img id="jap" src="https://media.cntraveler.com/photos/60596b398f4452dac88c59f8/16:9/w_3999,h_2249,c_limit/MtFuji-GettyImages-959111140.jpg" alt=japonija class="b" style="width:780px;height:480px">
+			     </div>
+
+    <div class="penktas">
+    	<div class="aprasymas">
+			     	<label for="tekstas"> <b>Paveikslo aprasymas</b> </label><br>
+			     	<input type="text" id="apr" />
+			     	<button id="saugoti" onclick="keistiAprasyma()">Išsaugoti aprašymą</button><br/>
+			     	<br>
+			     	<button onclick="trintiPaveiksla()">Trinti iš galerijos</button><br/>
+ 
+			     </div>
+
+    </div>
+
+	<footer class="sestas" style="background-color:black;"></footer>
+
+			 </div>
+
+
+
+                 </body>
+
+		  </html>            
